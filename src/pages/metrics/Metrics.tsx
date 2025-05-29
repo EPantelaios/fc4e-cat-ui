@@ -203,14 +203,10 @@ export default function Metrics() {
                               className="me-2 d-flex align-items-center"
                               style={{ cursor: "pointer", width: "1rem" }}
                               onClick={() => {
-                                setExpandedTests((prev) => {
-                                  console.log("item222", item);
-
-                                  return {
-                                    ...prev,
-                                    [item.metric_id]: !prev[item.metric_id],
-                                  };
-                                });
+                                setExpandedTests((prev) => ({
+                                  ...prev,
+                                  [item.metric_id]: !prev[item.metric_id],
+                                }));
                               }}
                             >
                               {isExpanded ? (
